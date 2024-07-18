@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+
+{% block content %}
+{% for post in object_list %}
+    <h5>{{ post.date|date:"Y-m-d" }} - <a href="{% url 'blog:post_detail' post.pk %}">{{ post.title }}</a></h5>
+    <p>{{ post.body }}</p>
+    <p>{{ post.signature }}</p>
+{% endfor %}
+{% endblock %}
